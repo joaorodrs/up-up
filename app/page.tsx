@@ -7,6 +7,7 @@ import Header from "@/components/header";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 import Service from "@/components/service";
+import Work from "@/components/work";
 
 export default function Home() {
   return (
@@ -49,7 +50,7 @@ export default function Home() {
           Somos uma agência de marketing com o propósito de viabilizar a criação de autoridade nas redes sociais
         </h2>
 
-        <div className="flex flex-col space-y-6 md:grid md:grid-cols-2 md:grid-rows-6 md:space-y-0 md:gap-8 md:mt-6">
+        <div className="flex flex-col space-y-6 md:grid md:grid-cols-2 md:grid-rows-4 md:space-y-0 md:gap-8 md:mt-6">
           <h2 className="hidden text-zinc-500 text-lg mb-10 row-span-1 md:flex">
             Somos uma agência de marketing com o propósito de viabilizar a criação de autoridade nas redes sociais
           </h2>
@@ -67,13 +68,43 @@ export default function Home() {
           />
           <Service
             icon={<CodeXmlIcon />}
-            title="Web Development"
+            title="Desenvolvimento Web"
             description="We provide services for website design using some fo the latest frameworks such as ReactJS, Node. We will give our best talent to build your website"
             className="md:row-span-2"
           />
 
           <Button size="lg" className="rounded-full mt-8 mb-12 font-bold text-black text-lg h-16">
             Nos Contate Agora
+            <ArrowRightIcon className="ml-4" />
+          </Button>
+        </div>
+      </section>
+
+      <section className="w-full py-10 px-6 bg-white text-black md:p-[5%]">
+        <h1 className="text-4xl font-bold md:text-7xl">Nossos Trabalhos</h1>
+        <h2 className="text-zinc-500 mt-6 mb-10 md:hidden">
+          Trabalhos realizados pelo nosso time
+        </h2>
+
+        <div className="flex flex-col space-y-16 md:mt-20 md:space-y-24">
+          <Work
+            src="/beach-tennis.jpg"
+            title="San Beach Open"
+            tags={["Marketing Digital", "Produção"]}
+          />
+          <Work
+            src="/maes-massamix.png"
+            title="Massamix | Dia das Mães"
+            tags={["Produção"]}
+            className="md:flex-row-reverse md:justify-between"
+          />
+          <Work
+            src="/bobs.png"
+            title="Bob's | Drive Thru"
+            tags={["Produção", "Marketing Digital"]}
+          />
+          <Button size="lg" className="rounded-full mt-8 mb-12 font-bold text-black text-lg h-16 md:w-fit md:mx-auto md:text-xl">
+            Ver Mais
             <ArrowRightIcon className="ml-4" />
           </Button>
         </div>
