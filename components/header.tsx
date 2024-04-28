@@ -10,7 +10,7 @@ import {
 
 function Header() {
   return (
-    <header className="fixed w-full p-6 flex justify-between items-center md:px-[5%]">
+    <header className="fixed z-50 w-full p-6 flex justify-between items-center md:px-[5%]">
       <div className="flex items-center space-x-12">
         <Image
           src="/up-logo.png"
