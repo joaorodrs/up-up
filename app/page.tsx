@@ -133,7 +133,7 @@ export default function Home() {
         <h1 className="text-5xl font-semibold leading-tight text-black text-center md:text-8xl md:leading-tight md:text-left">
           Pronto para Colaborar Conosco?
         </h1>
-        <div>
+        <div className="flex flex-col items-center md:items-start">
           <h2 className="mb-6 text-zinc-600 text-center mt-8 md:text-2xl md:text-left md:w-[50%]">
             {"If you already have an awesome idea for your project and don't know how to make it real? Don’t worry we all here to help you realize your idea."}
           </h2>
