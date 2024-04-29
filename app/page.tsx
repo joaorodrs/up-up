@@ -1,13 +1,13 @@
 "use client"
 
-import { ArrowDownIcon, ArrowRightIcon, CodeXmlIcon, PenToolIcon, ScreenShareIcon } from "lucide-react";
+import { ArrowDownIcon, ArrowRightIcon, CodeXmlIcon, Facebook, Instagram, PenToolIcon, ScreenShareIcon, Twitter } from "lucide-react";
 import Image from 'next/image'
 
 import Header from "@/components/header";
 import { Button } from "@/components/ui/button";
-import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 import Service from "@/components/service";
 import Work from "@/components/work";
+import Testimonial from "@/components/testimonial";
 
 export default function Home() {
   return (
@@ -108,6 +108,70 @@ export default function Home() {
             <ArrowRightIcon className="ml-4" />
           </Button>
         </div>
+      </section>
+
+      <section className="w-full px-6 py-10 md:p-[5%]">
+        <h1 className="mb-10 text-4xl font-bold md:text-7xl">Depoimentos</h1>
+
+        <div className="flex flex-col space-y-6 md:flex-row md:space-y-0 md:space-x-6 md:mt-20">
+          <Testimonial
+            src="https://github.com/joaorodrs.png"
+            quote="“An amazing experience in my life for the first time to feel satisfaction in the results of designs made by Alberto”"
+            name="João Paulo"
+            title="Software Engineer"
+          />
+          <Testimonial
+            src="https://github.com/joaorodrs.png"
+            quote="“I don't know what else to say, Always satisfied with the results made by alberto design and I will work with him again”"
+            name="João Paulo"
+            title="CEO of GitHub"
+          />
+        </div>
+      </section>
+
+      <section className="w-full px-6 py-10 flex flex-col items-center bg-white md:p-[5%]">
+        <h1 className="text-5xl font-semibold leading-tight text-black text-center md:text-8xl md:leading-tight md:text-left">
+          Pronto para Colaborar Conosco?
+        </h1>
+        <div>
+          <h2 className="mb-6 text-zinc-600 text-center mt-8 md:text-2xl md:text-left md:w-[50%]">
+            {"If you already have an awesome idea for your project and don't know how to make it real? Don’t worry we all here to help you realize your idea."}
+          </h2>
+          <Button variant="link" className="text-black md:text-xl">
+            Nos Contate Agora
+            <ArrowRightIcon className="ml-2" />
+          </Button>
+        </div>
+      </section>
+
+      <section className="w-full px-6 py-10 md:p-[5%]">
+        <div className="flex items-center space-x-8">
+          <Image
+            src="/up-logo.png"
+            alt="Up&Up"
+            width={50}
+            height={50}
+          />
+          <h1 className="text-xl font-bold">Up&Up Marketing</h1>
+        </div>
+        <div className="grid grid-cols-2 mt-8 w-[50%]">
+          <Button variant="link" className="px-1 text-md justify-start">Sobre</Button>
+          <Button variant="link" className="px-1 text-md justify-start">Trabalhos</Button>
+          <Button variant="link" className="px-1 text-md justify-start">Serviços</Button>
+          <Button variant="link" className="px-1 text-md justify-start">Contato</Button>
+        </div>
+        <div className="mt-8 space-x-4">
+          <Button size="icon" variant="ghost">
+            <Instagram />
+          </Button>
+          <Button size="icon" variant="ghost">
+            <Facebook />
+          </Button>
+          <Button size="icon" variant="ghost">
+            <Twitter />
+          </Button>
+        </div>
+        <p className="mt-10 text-zinc-400">©2024 Up&Up. Todos os direitos reservados.</p>
       </section>
     </main>
   );
