@@ -57,7 +57,14 @@ export default function Home() {
       </section>
 
       <section className="w-full px-6 py-10 bg-gray-100 text-black md:p-[5%]">
-        <h1 className="text-4xl font-bold md:text-7xl">Nosso Serviço</h1>
+        <motion.h1
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: 'easeInOut', delay: 0.2 }}
+          className="text-4xl font-bold md:text-7xl"
+        >
+          Nosso Serviço
+        </motion.h1>
         <h2 className="text-zinc-500 mt-6 mb-10 md:hidden">
           Somos uma agência de marketing com o propósito de viabilizar a criação de autoridade nas redes sociais
         </h2>
@@ -93,7 +100,14 @@ export default function Home() {
       </section>
 
       <section className="w-full py-10 px-6 bg-white text-black md:p-[5%]">
-        <h1 className="text-4xl font-bold md:text-7xl">Nossos Trabalhos</h1>
+        <motion.h1
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: 'easeInOut', delay: 0.2 }}
+          className="text-4xl font-bold md:text-7xl"
+        >
+          Nossos Trabalhos
+        </motion.h1>
         <h2 className="text-zinc-500 mt-6 mb-10 md:hidden">
           Trabalhos realizados pelo nosso time
         </h2>
@@ -123,7 +137,14 @@ export default function Home() {
       </section>
 
       <section className="w-full px-6 py-10 md:p-[5%]">
-        <h1 className="mb-10 text-4xl font-bold md:text-7xl">Depoimentos</h1>
+        <motion.h1
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: 'easeInOut', delay: 0.2 }}
+          className="mb-10 text-4xl font-bold md:text-7xl"
+        >
+          Depoimentos
+        </motion.h1>
 
         <div className="flex flex-col space-y-6 md:flex-row md:space-y-0 md:space-x-6 md:mt-20">
           <Testimonial
@@ -141,7 +162,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full px-6 py-10 flex flex-col items-center bg-white md:p-[5%]">
+      <section className="w-full px-6 py-10 flex flex-col items-center bg-white md:p-[5%] md:items-start">
         <h1 className="text-5xl font-semibold leading-tight text-black text-center md:text-8xl md:leading-tight md:text-left">
           Pronto para Colaborar Conosco?
         </h1>

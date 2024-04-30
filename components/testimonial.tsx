@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 type Props = {
   quote: string;
@@ -9,7 +10,12 @@ type Props = {
 
 function Testimonial({ quote, src, name, title }: Props) {
   return (
-    <div className="bg-white px-4 py-10 text-black md:px-10">
+    <motion.div
+      initial={{ scale: 0.3, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 1.5, type: "spring", delay: 0.3, stiffness: 50 }}
+      className="bg-white px-4 py-10 text-black md:px-10"
+    >
       <p className="text-xl">{quote}</p>
       <div className="mt-6 flex items-center space-x-4">
         <Image
@@ -24,7 +30,7 @@ function Testimonial({ quote, src, name, title }: Props) {
           <p className="text-sm text-zinc-600">{title}</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

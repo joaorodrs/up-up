@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Button } from './ui/button'
 import { ArrowRightIcon } from 'lucide-react'
 import { twMerge } from 'tailwind-merge';
+import { motion } from 'framer-motion'
 
 type Props = {
   src: string;
@@ -12,7 +13,12 @@ type Props = {
 
 function Work({ src, title, tags, className }: Props) {
   return (
-    <div className={twMerge("md:flex md:space-x-10", className)}>
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: 'easeInOut', delay: 0.5 }}
+      className={twMerge("md:flex md:space-x-10", className)}
+    >
       <div className="relative w-full h-[300px] md:w-[40%]">
         <Image src={src} alt={src} fill className="object-cover" />
       </div>
@@ -30,7 +36,7 @@ function Work({ src, title, tags, className }: Props) {
           <ArrowRightIcon className="ml-2" />
         </Button>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
