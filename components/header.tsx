@@ -60,7 +60,7 @@ function Header() {
         visible: { opacity: 1, y: 0 },
       }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}
-      className="fixed z-50 w-full p-6 flex justify-between items-center md:px-[5%] backdrop-blur backdrop-brightness-75"
+      className="fixed z-50 w-full p-6 flex justify-between items-center md:px-[5%] bg-black"
     >
       <div className="flex items-center space-x-12">
         <Image
