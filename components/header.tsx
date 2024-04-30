@@ -1,6 +1,7 @@
+import { useState } from 'react'
 import Image from 'next/image'
 import { MenuIcon, Instagram, Facebook, Twitter, ArrowRightIcon } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion, useMotionValue, useMotionValueEvent, useScroll, useTransform } from 'framer-motion'
 
 import { Button } from './ui/button'
 import {
@@ -28,17 +29,38 @@ const navItem = {
 }
 
 function Header() {
+  const { scrollYProgress } = useScroll()
+
+  const [prevScroll, setPrevScroll] = useState(0)
+  const [hidden, setHidden] = useState(false)
+
+  function update(latest: number, prev: number) {
+    if (latest < prev) {
+      setHidden(false)
+      return
+    }
+
+    setHidden(true)
+  }
+
+  useMotionValueEvent(scrollYProgress, "change", (latest: number) => {
+    update(latest, prevScroll)
+    setPrevScroll(latest)
+  })
+
   return (
     <motion.header
       initial={{
         opacity: 0,
         y: 10
       }}
-      animate={{
-        opacity: 1,
-        y: 0
+      animate={hidden ? "hidden" : "visible"}
+      variants={{
+        hidden: { y: '-100%' },
+        visible: { opacity: 1, y: 0 },
       }}
-      className="fixed z-50 w-full p-6 flex justify-between items-center md:px-[5%]"
+      transition={{ duration: 0.5, ease: 'easeInOut' }}
+      className="fixed z-50 w-full p-6 flex justify-between items-center md:px-[5%] backdrop-blur backdrop-brightness-75"
     >
       <div className="flex items-center space-x-12">
         <Image
