@@ -54,8 +54,8 @@ function Header() {
           animate="visible"
         >
           {nav.map(item => (
-            <motion.div key={item} variants={navItem}>
-              <Button variant="link" className="px-1 text-md text-white">{item}</Button>
+            <motion.div key={item} role="link" aria-label={item} variants={navItem}>
+              <Button variant="link" aria-label={item} className="px-1 text-md text-white">{item}</Button>
             </motion.div>
           ))}
         </motion.nav>

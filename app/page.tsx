@@ -2,12 +2,14 @@
 
 import { ArrowDownIcon, ArrowRightIcon, CodeXmlIcon, Facebook, Instagram, PenToolIcon, ScreenShareIcon, Twitter } from "lucide-react";
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 import Header from "@/components/header";
 import { Button } from "@/components/ui/button";
 import Service from "@/components/service";
 import Work from "@/components/work";
 import Testimonial from "@/components/testimonial";
+import TypingAnimate from "@/components/typing-animate";
 
 export default function Home() {
   return (
@@ -15,11 +17,19 @@ export default function Home() {
       <Header />
 
       <section className="w-full h-[80vh] flex flex-col justify-end px-6 md:h-[90vh] md:px-[5%]">
-        <h2 className="mb-6 text-zinc-300 md:text-2xl md:w-[50%]">
+        <motion.h2
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 0.5,
+            ease: 'easeOut'
+          }}
+          className="mb-6 text-zinc-300 md:text-2xl md:w-[50%]"
+        >
           Nós somos especialistas em produção audiovisual
-        </h2>
+        </motion.h2>
         <h1 className="text-5xl font-semibold leading-tight md:text-9xl md:leading-tight 2xl:w-[50%]">
-          <span className="text-primary">Up&Up</span> seu Marketing!
+          <span className="text-primary">Up&Up</span> seu <TypingAnimate>Marketing!</TypingAnimate>
         </h1>
         <div className="flex items-center justify-between">
           <Button size="lg" className="rounded-full mt-8 mb-12 font-bold text-black text-md md:h-16 md:text-xl md:mb-[5%]">
@@ -29,7 +39,9 @@ export default function Home() {
           <div className="hidden items-center space-x-4 md:flex">
             <span className="text-lg font-semibold">Descubra mais</span>
             <div className="flex items-center justify-center border border-white p-2 rounded-full h-16">
-              <ArrowDownIcon />
+              <motion.div animate={{ y: [-10, 10], opacity: [0, 1, 1, 0] }} transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}>
+                <ArrowDownIcon />
+              </motion.div>
             </div>
           </div>
         </div>
