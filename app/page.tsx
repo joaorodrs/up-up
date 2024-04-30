@@ -14,7 +14,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center">
       <Header />
 
-      <section className="w-full h-[50vh] flex flex-col justify-end px-6 md:h-[90vh] md:px-[5%]">
+      <section className="w-full h-[80vh] flex flex-col justify-end px-6 md:h-[90vh] md:px-[5%]">
         <h2 className="mb-6 text-zinc-300 md:text-2xl md:w-[50%]">
           Nós somos especialistas em produção audiovisual
         </h2>
