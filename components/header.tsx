@@ -87,7 +87,7 @@ function Header() {
         <ArrowRightIcon className="ml-2" />
       </Button>
       <Drawer>
-        <DrawerTrigger className="p-2 md:hidden">
+        <DrawerTrigger className="p-2 md:hidden" aria-label="Menu">
           <MenuIcon />
         </DrawerTrigger>
         <DrawerContent>
@@ -108,13 +108,25 @@ function Header() {
               <Button variant="link" className="px-1 text-md justify-start">Contato</Button>
             </div>
             <div className="mt-8 space-x-4">
-              <Button size="icon" variant="ghost">
+              <Button
+                size="icon"
+                variant="ghost"
+                aria-label="Instagram"
+              >
                 <Instagram />
               </Button>
-              <Button size="icon" variant="ghost">
+              <Button
+                size="icon"
+                variant="ghost"
+                aria-label="Facebook"
+              >
                 <Facebook />
               </Button>
-              <Button size="icon" variant="ghost">
+              <Button
+                size="icon"
+                variant="ghost"
+                aria-label="Twitter"
+              >
                 <Twitter />
               </Button>
             </div>

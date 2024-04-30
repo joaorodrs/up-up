@@ -65,12 +65,12 @@ export default function Home() {
         >
           Nosso Serviço
         </motion.h1>
-        <h2 className="text-zinc-500 mt-6 mb-10 md:hidden">
+        <h2 className="text-zinc-600 mt-6 mb-10 md:hidden">
           Somos uma agência de marketing com o propósito de viabilizar a criação de autoridade nas redes sociais
         </h2>
 
         <div className="flex flex-col space-y-6 md:grid md:grid-cols-2 md:grid-rows-4 md:space-y-0 md:gap-8 md:mt-6">
-          <h2 className="hidden text-zinc-500 text-lg mb-10 row-span-1 md:flex">
+          <h2 className="hidden text-zinc-600 text-lg mb-10 row-span-1 md:flex">
             Somos uma agência de marketing com o propósito de viabilizar a criação de autoridade nas redes sociais
           </h2>
           <Service
